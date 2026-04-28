@@ -62,6 +62,48 @@
     ul {
       padding-left: 22px;
     }
+
+/* 滚动图片 */
+        .image-scroll {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 12px 0 20px 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .image-scroll img {
+      height: 180px;
+      width: auto;
+      max-width: 260px;
+      border-radius: 10px;
+      object-fit: cover;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .image-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .image-scroll::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .image-scroll::-webkit-scrollbar-thumb {
+      background: #bbb;
+      border-radius: 10px;
+    }
+
+    .image-scroll::-webkit-scrollbar-thumb:hover {
+      background: #888;
+    }
+
+    
   </style>
 </head>
 <body>
@@ -93,6 +135,16 @@
     <li>08/2025 参加国际仿生智能会议<a href="https://www.icbir.org/2025">ICBIR 2025</a>，张掖。    
     <li>06/2025 攻读中山大学航空航天学院博士学位，进入空间机器人与具身智能实验室。
   </ul>
+
+ <h2>Gallery</h2>
+  <div class="image-scroll">
+    <img src="acatar.jpg" alt="gallery image 1">
+    <img src="acatar.jpg" alt="gallery image 2">
+    <img src="acatar.jpg" alt="gallery image 3">
+    <img src="acatar.jpg" alt="gallery image 4">
+    <img src="acatar.jpg" alt="gallery image 5">
+  </div>
+  
 
   <h2>Education</h2>
   <ul>
