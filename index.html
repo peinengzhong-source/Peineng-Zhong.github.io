@@ -64,43 +64,40 @@
     }
 
 /* 滚动图片 */
-        .image-scroll {
-      display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      overflow-y: hidden;
+ .gallery-wrapper {
+      width: 100%;
+      overflow: hidden;
       padding: 12px 0 20px 0;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
     }
 
-    .image-scroll img {
+    .gallery-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: gallery-scroll 28s linear infinite;
+    }
+
+    .gallery-track img {
       height: 180px;
       width: auto;
       max-width: 260px;
       border-radius: 10px;
       object-fit: cover;
-      scroll-snap-align: start;
       flex-shrink: 0;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     }
 
-    .image-scroll::-webkit-scrollbar {
-      height: 8px;
+    .gallery-wrapper:hover .gallery-track {
+      animation-play-state: paused;
     }
 
-    .image-scroll::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-
-    .image-scroll::-webkit-scrollbar-thumb {
-      background: #bbb;
-      border-radius: 10px;
-    }
-
-    .image-scroll::-webkit-scrollbar-thumb:hover {
-      background: #888;
+    @keyframes gallery-scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
     }
 
     
@@ -142,6 +139,24 @@
     <img src="avatar.jpg" alt="gallery image 4">
     <img src="avatar.jpg" alt="gallery image 5">
   </div>
+
+ <div class="gallery-wrapper">
+    <div class="gallery-track">
+    <img src="avatar.jpg" alt="gallery image 1">
+    <img src="avatar.jpg" alt="gallery image 2">
+    <img src="avatar.jpg" alt="gallery image 3">
+    <img src="avatar.jpg" alt="gallery image 4">
+    <img src="avatar.jpg" alt="gallery image 5">
+
+      <!-- 重复一遍图片，用于实现无缝循环滚动 -->
+    <img src="avatar.jpg" alt="gallery image 1">
+    <img src="avatar.jpg" alt="gallery image 2">
+    <img src="avatar.jpg" alt="gallery image 3">
+    <img src="avatar.jpg" alt="gallery image 4">
+    <img src="avatar.jpg" alt="gallery image 5">
+    </div>
+  </div>
+
   
 
   <h2>Education</h2>
